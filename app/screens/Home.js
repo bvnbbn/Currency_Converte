@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Text, StatusBar, KeyboardAvoidingView  } from 'react-native';
 import { Container } from '../components/Container';
 import { Logo } from '../components/Logo';
@@ -21,23 +21,34 @@ const TEMP_CONVERSION_RATE = 0.79739;
 
 class Home extends Component{
 
+    static propTypes = {
+
+        navigation: PropTypes.object,
+    };
+
     handlePressBaseCurrency = () => {
 
         console.log('press base');
-    }
+        //since home screen is directly attached through the Stack navigator class so Stack Navigator 
+        //is the parent class for the Home screen so we can 
+        //pass the arguements through the props 
+        this.props.navigation.navigate('CurrencyList' , {title: 'BaseCurrency'});
+    };
 
     handlePressQuoteCurrency = () => {
         console.log('press quote');
-    }
+        this.props.navigation.navigate('CurrencyList', {title: 'QuoteCurrency'});
+    };
 
     handleSwapCurrency = () => {
         console.log('press quote');
-    }
+    };
 
 
     handleOptionsPress = () => {
         console.log('options pressed ');
-    }
+        this.props.navigation.navigate('Options');
+    };
 
 
     //render the UI on screen in app

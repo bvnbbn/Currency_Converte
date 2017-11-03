@@ -13,9 +13,9 @@ export default EStyleSheet.create({
         right: 0,
         top: 0,
 
-        '@media android': {
+        /*'@media android': {
             paddingTop:StatusBar.currentHeight,
-        },
+        },*/
     },
 
     button: {
