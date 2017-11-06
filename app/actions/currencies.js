@@ -1,0 +1,23 @@
+export const SWAP_CURRENCY = 'SWAP_CURRENCY';
+export const CHANGE_CURRENCY_AMOUNT = 'CHANGE_CURRENCY_AMOUNT';
+
+
+
+//actions created for Home Screen 
+export const swapCurrency = () => ({
+
+    type:SWAP_CURRENCY,
+
+});
+
+export const changeCurrencyAmount = amount => ({
+    
+        type:CHANGE_CURRENCY_AMOUNT,
+        amount: parseFloat(amount),
+    
+    });
+    
+    
+
+
+
